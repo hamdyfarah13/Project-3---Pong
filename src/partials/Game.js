@@ -3,6 +3,7 @@ import { SVG_NS, KEYS } from '../settings'
 import Board from './Board'
 import Paddle from './Paddle'
 import Ball from './Ball'
+import Score from './Score'
 
 export default class Game {
 
@@ -19,7 +20,6 @@ export default class Game {
 		this.paddleHeight = 56;
 		this.r = 8;
 
-
 		this.paddleOne = new Paddle
 		(this.height,
 			this.paddleWidth, 
@@ -29,6 +29,8 @@ export default class Game {
 			KEYS.a ,
 			KEYS.z
 		);
+		this.score1 = new Score(100, 100, 30);
+		this.score2 = new Score(390, 100, 30);
 
 		this.paddleTwo = new Paddle
 		(this.height, 
@@ -44,6 +46,7 @@ export default class Game {
 		this.width,
 		this.height
 	);
+	
 
 	document.addEventListener('keydown', event => {
 		if ( event.key === KEYS.spaceBar ) {
@@ -53,6 +56,7 @@ export default class Game {
 			}
 		});
 	}
+
 
 	render(){
 	if(this.pause){ 
@@ -74,7 +78,10 @@ export default class Game {
 		this.paddleTwo.render(svg);
 		//ball
 		this.ball.render(svg, this.paddleOne, this.paddleTwo);
-		
+		this.score1.render(svg, this.paddleOne.score);
+		this.score2.render(svg, this.paddleTwo.score);
+
 	}
 
 }
+
