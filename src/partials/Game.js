@@ -80,6 +80,13 @@ export default class Game {
 		this.ball.render(svg, this.paddleOne, this.paddleTwo);
 		this.score1.render(svg, this.paddleOne.score);
 		this.score2.render(svg, this.paddleTwo.score);
+		
+			document.addEventListener('keydown', event => {
+				switch (event.keyCode) {
+					case KEYS.spaceBar:
+						this.pause = !this.pause;
+						break;
+				}});
 
 	}
 
