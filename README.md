@@ -17,6 +17,7 @@ A basic pong game using SVGs.
 `> npm run build`
 
 ## Keys
+* spacebar: pause   
 
 **Player 1:**
 * a: up
