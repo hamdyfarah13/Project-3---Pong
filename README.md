@@ -26,3 +26,9 @@ A basic pong game using SVGs.
 **Player 2:**
 * ▲ : up
 * ▼: down
+
+**Relections**
+
+While programming Pong I have made a stetch goal of make an additional 2 more balls appear by adding a new ball fucntion in Game.js.
+
+*Enjoy!
